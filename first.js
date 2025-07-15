@@ -9,7 +9,9 @@ let min = 0;
 let time = null;
 
 start.addEventListener('click',()=>{
-    if(time == null)
+    if(time != null){
+        clearInterval(time);
+    }
     time = setInterval(timer, 10);
 })
 
@@ -18,7 +20,9 @@ stop.addEventListener('click',()=>{
 })
 
 reset.addEventListener('click',()=>{
-    clearInterval(time);
+    msec = 0;
+    sec = 0;
+    min = 0;
     input.value = `00:00:00`;
 })
 
